@@ -1,0 +1,20 @@
+<div class="bg-slate-100 min-h-screen">
+  <header><app-header></app-header></header>
+  <div
+    class="lg:ml-5 w-64 lg:h-[calc(100vh-6rem)] h-screen bg-white pt-4 pl-4 fixed lg:top-16 lg:z-0 z-20  "
+    [ngClass]="{ 'block left-0 ': isSidebarOpen, 'hidden ': !isSidebarOpen }"
+  >
+    <app-sidebar></app-sidebar>
+  </div>
+  <div
+    [ngClass]="{
+      ' pr-5 pl-5 pt-16 pb-6': true,
+      'ml-0': !isSidebarOpen,
+      'lg:ml-72': isSidebarOpen
+    }"
+  >
+    <router-outlet />
+  </div>
+
+  <div  (click)="closeSidebar()" class="fixed inset-0 bg-neutral-900/90 w-screen h-screen hidden lg:hidden z-10" [ngClass]="{'hidden':!isSidebarOpen , 'block':isSidebarOpen}"></div>
+</div>

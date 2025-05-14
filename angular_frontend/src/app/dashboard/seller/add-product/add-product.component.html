@@ -1,0 +1,86 @@
+<div class="w-full bg-white p-5 rounded-md">
+  <div class="flex justify-between items-center rounded-lg">
+    <h1 class="text-xl font-medium">Add Product</h1>
+    <a
+      [routerLink]="['seller/dashboard/products']"
+      class="bg-blue-500 hover:shadow-blue-500/50 hover:shadow-lg text-white rounded-sm px-7 py-2 my-2"
+      >All Product</a
+    >
+  </div>
+
+  <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+    <div class="sm:col-span-3">
+      <label for="product-name">Product Name</label>
+      <div class="mt-2">
+        <input
+          type="text"
+          name="product-name"
+          id="product-name"
+          class="w-full block border p-2 mt-2 border-slate-300 rounded-lg focus:outline-[#10b981]"
+          placeholder="Product Name"
+        />
+      </div>
+    </div>
+
+    <div class="sm:col-span-3">
+      <label for="brand-name">Brand Name</label>
+      <div class="mt-2">
+        <input
+          type="text"
+          name="brand-name"
+          id="brand-name"
+          class="w-full block border p-2 mt-2 border-slate-300 rounded-lg focus:outline-[#10b981]"
+          placeholder="Brand Name"
+        />
+      </div>
+    </div>
+
+    <div class="sm:col-span-3">
+      <label for="category">Category</label>
+      <div class="mt-2 relative">
+        <input
+          readOnly
+          class="w-full block border p-2 mt-2 border-slate-300 rounded-lg focus:outline-[#10b981]  cursor-pointer"
+          type="text"
+          (click)="toggleCategoryList()"
+          placeholder="--select category--"
+          [value]="selectedCategory || '--select category--'"
+        />
+        @if (showCategoryList) {
+        <div class="absolute top-12 w-full bg-white px-4">
+          <input
+            type="text"
+            name="category_search"
+            class="w-full block border p-2 mt-2 border-slate-300 rounded-lg focus:outline-[#10b981]"
+          (input)="categorySearch($event)"
+            />
+          <ul class="h-36 overflow-y-scroll mt-2">
+           @for (category of categories; track $index) {
+ <li
+              class="mt-1 hover:bg-slate-100 rounded-lg text-lg cursor-pointer"
+              (click)="selectCategory(category)"
+            >
+              <span class="py-4 px-2">{{category}}</span>
+            </li>
+           }
+           
+            
+          </ul>
+        </div>
+        }
+      </div>
+    </div>
+
+    <div class="sm:col-span-3">
+      <label for="product-stock">Product Stock</label>
+      <div class="mt-2">
+        <input
+          type="text"
+          name="product-stock"
+          class="w-full block border p-2 mt-2 border-slate-300 rounded-lg focus:outline-[#10b981]"
+          placeholder="Product Stock"
+        />
+      </div>
+    </div>
+  </div>
+</div>

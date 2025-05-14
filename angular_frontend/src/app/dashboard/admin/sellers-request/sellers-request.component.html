@@ -1,0 +1,88 @@
+<div class="w-full bg-white p-5 rounded-md">
+    <div class="flex justify-between items-center p-5 rounded-lg">
+      <select
+        (change)="onPageSizeChange($event)"
+        [value]="itemsPerPage"
+        class="p-2 border border-[#10b981] rounded-md outline-none"
+      >
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+      </select>
+      <input
+        class="px-4 py-2 focus:border-indigo-500 outline-none border border-[#10b981] rounded-md"
+        type="text"
+        placeholder="search"
+      />
+    </div>
+    <table
+        class="border border-gray-400 w-full text-left rounded-lg bg-clip-border"
+      >
+        <thead>
+          <tr class="bg-gray-100 font-medium">
+            <td class="p-2 border-b border-gray-400">No</td>
+            <td class="p-5 border-b border-gray-400">Name</td>
+            <td class="p-5 border-b border-gray-400">Email</td>
+            <td class="p-5 border-b border-gray-400">Payment Status</td>
+            <td class="p-5 border-b border-gray-400">Status</td>
+            <td class="p-5 border-b border-gray-400">Action</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-5 border-b border-gray-400">1</td>
+            <td class="p-5 border-b border-gray-400">Kazi Ariyan</td>
+            <td class="p-5 border-b border-gray-400">{{'ariyan@gmail.com'}}</td>
+            <td class="p-5 border-b border-gray-400"> <span class="p-2 bg-orange-100 text-orange-700 rounded-md text-sm">Pending</span></td>
+            <td class="p-5 border-b border-gray-400"> <span class="bg-green-100 text-green-700 p-2 rounded-md text-sm">Active</span> </td>
+            <td class="p-5 border-b border-gray-400">
+              <div class="flex">
+                  <fa-icon
+                  [icon]="faEye"
+                  class="text-green-500 text-lg cursor-pointer"
+                ></fa-icon>
+              </div>
+            </td>
+          </tr>
+  
+          <tr>
+            <td class="p-5 border-b border-gray-400">2</td>
+            <td class="p-5 border-b border-gray-400">Kazi Ariyan</td>
+            <td class="p-5 border-b border-gray-400">{{'ariyan@gmail.com'}}</td>
+            <td class="p-5 border-b border-gray-400"><span class="p-2 bg-orange-100 text-orange-700 rounded-md text-sm">Pending</span></td>
+            <td class="p-5 border-b border-gray-400"> <span class="bg-red-100 text-red-700 p-2 rounded-md text-sm" >Deactive</span> </td>
+            <td class="p-5 border-b border-gray-400">
+              <div class="flex">
+                  <fa-icon
+                  [icon]="faEye"
+                  class="text-green-500 text-lg cursor-pointer"
+                ></fa-icon>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="p-5 border-b border-gray-400">3</td>
+            <td class="p-5 border-b border-gray-400">Kazi Ariyan</td>
+            <td class="p-5 border-b border-gray-400">{{'ariyan@gmail.com'}}</td>
+            <td class="p-5 border-b border-gray-400"><span class="py-[1px] px-[5px] bg-orange-100 text-orange-700 rounded-md text-sm">Pending</span></td>
+            <td class="p-5 border-b border-gray-400"> <span class="bg-red-100 text-red-700 p-2 rounded-md text-sm">Deactive</span> </td>
+            <td class="p-5 border-b border-gray-400">
+              <div class="flex">
+                  <fa-icon
+                  [icon]="faEye"
+                  class="text-green-500 text-lg cursor-pointer"
+                ></fa-icon>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <app-pagination
+        [pageNumber]="currentPage"
+        [totalItem]="totalItems"
+        [itemsPerPage]="itemsPerPage"
+        [showItem]="4"
+        (pageChanged)="onPageChange($event)"
+      ></app-pagination>
+  </div>
+  

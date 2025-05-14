@@ -1,0 +1,86 @@
+<div class="container bg-slate-100">
+  <div class="min-w-screen min-h-screen flex justify-center items-center">
+    <div class="p-2 login-container-1">
+      <div class="login-container-2 p-2">
+        <form #registerForm="ngForm" (ngSubmit)="registerSubmit(registerForm)">
+          <div class="grid grid-cols-2 p-12 gap-5">
+            <div class="col-span-2 text-center">
+              <div *ngIf="loader$ | async">
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+              </div>
+            </div>
+            <div class="col-span-2 text-center">
+              <h1 class="text-xl mb-1 font-bold">Welcome to Ecommerce</h1>
+              <p class="text-slate-400">Please register your account</p>
+            </div>
+            <div class="col-span-2 flex flex-col">
+              <label class="text-lg mb-1">Name</label>
+              <input
+                type="text"
+                placeholder="Name"
+                class="border-2 p-1 rounded-md"
+                name="name"
+                ngModel
+              />
+            </div>
+            <div class="col-span-2 flex flex-col">
+              <label class="text-lg mb-1">Email</label>
+              <input
+                type="text"
+                placeholder="Email Address"
+                class="border-2 p-1 rounded-md"
+                name="email"
+                ngModel
+              />
+            </div>
+
+            <div class="col-span-2 flex flex-col">
+              <label class="text-lg mb-1">Password</label>
+              <input
+                type="password"
+                placeholder="Password"
+                class="border-2 p-1 rounded-md"
+                name="password"
+                ngModel
+              />
+            </div>
+
+            <div>
+              <input
+                type="checkbox"
+                class="mr-2"
+                name="agreement"
+                ngModel
+              /><span>I agree to privacy policy & treams</span>
+            </div>
+            <a class="text-medium-green text-right">Sign In</a>
+            <button
+            [disabled]="loader$ | async" 
+              class="bg-medium-green col-span-2 text-white p-1 rounded-md"
+            >
+              Sign Up
+            </button>
+
+            <div class="col-span-2 flex justify-center items-center ">
+              <div class="w-[45%] bg-slate-400 h-[1px]"></div>
+              <div class="w-[10%] flex justify-center items-center">
+                <span>or</span>
+              </div>
+              <div class="w-[45%] bg-slate-400 h-[1px]"></div>
+            </div>
+
+            <div class=" w-[100%] h-[40px]  flex rounded-md bg-orange-700 justify-self-center shadow-lg hover:shadow-orange-700/50 justify-center cursor-pointer items-center overflow-hidden">
+              <span class="text-white text-xl">
+                <fa-icon [icon]="faGoogle"></fa-icon>
+              </span>
+            </div>
+
+            <div class="w-[100%] h-[40px] flex rounded-md bg-blue-700 shadow-lg hover:shadow-blue-700/50 justify-self-center justify-center cursor-pointer items-center overflow-hidden">
+              <span class="text-white text-xl"><fa-icon [icon]="faFacebook"></fa-icon></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

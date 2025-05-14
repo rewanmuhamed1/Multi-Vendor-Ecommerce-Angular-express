@@ -1,0 +1,38 @@
+<div class="fixed flex h-[55px] bg-white w-screen px-6 justify-between">
+  <div class="flex items-center">
+    <button (click)="toggleSidebar()">
+      <fa-icon [icon]="faBars" class="text-black text-xl" ></fa-icon>
+    </button>
+
+    <img src="shopping-icon-.webp" class="w-[40px] ml-3" />
+    <h1 class="font-bold uppercase ml-3">Easy Shop</h1>
+  </div>
+  <div class="flex items-center mr-5">
+    <div class="relative group">
+      <button id="btnsearch" class="absolute h-10 w-10 bg-transparent p-2 right-0 rounded-full text-white group-focus-within:text-[#10b981] cursor-pointer">
+        <fa-icon [icon]="faMagnifyingGlass" class="text-lg"></fa-icon>
+      </button>
+    
+      <input type="text" id="inputsearch" 
+        class="h-10 w-10 bg-[#10b981] outline-none rounded-full group-focus-within:w-[300px] group-focus-within:rounded-none group-focus-within:bg-transparent group-focus-within:border-b group-focus-within:border-[#10b981] focus:w-[300px] focus:rounded-none focus:bg-transparent focus:border-b focus:border-[#10b981]"
+        placeholder="Type to Search...">
+    </div>
+    <button id="menu-btn" class="ml-5 flex" (click)="toggleUserMenu()">
+      <fa-icon [icon]="faUser" class="text-black text-xl "></fa-icon>
+      <p class="ml-2">Rewan</p>
+    </button>
+
+  </div>
+@if (btnUserMenu) {
+  <div id="user-menu" class="absolute top-14 right-1 min-w-[140px] p-3 bg-white text-black ">
+    <p class="p-1">Admin</p>
+    <p class="p-1">Profile</p>
+    <div class="flex text-red-500 border-t-2 border-gray-200 p-2">
+      <fa-icon [icon]="faArrowRightFromBracket" class="transform scale-x-[-1]"></fa-icon>
+      <p class="pl-2">Logout</p> 
+    </div>
+    </div>
+}
+
+
+</div>

@@ -1,0 +1,78 @@
+<div class="w-full bg-white p-5 rounded-md ">
+    <div class="flex justify-between items-center p-5 rounded-lg"> 
+     <select  (change)="onPageSizeChange($event )" [value]="itemsPerPage" class="p-2 border border-[#10b981] rounded-md outline-none ">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option> 
+     </select>
+     <input class='px-4 py-2 focus:border-indigo-500 outline-none border border-[#10b981] rounded-md ' type="text" placeholder='search' /> 
+    </div>
+    <table class=" border border-gray-400  w-full text-left rounded-lg bg-clip-border">
+      <thead>
+        <tr class="bg-gray-100   font-medium  " >
+          <td class="p-2  border-b border-gray-400 "></td>
+          <td class="p-5  border-b border-gray-400 ">Order id</td>
+          <td class="p-5  border-b border-gray-400 ">Price</td>
+          <td class="p-5  border-b border-gray-400 ">Payment Status</td>
+          <td class="p-5  border-b border-gray-400 ">Order Status</td>
+          <td class="p-5  border-b border-gray-400 ">Action </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="label" >
+           <td class="p-2  border-b border-gray-400 " ><fa-icon [icon]="faAngleRight"  [ngClass]="{'rotate-90': toggleRow, 'rotate-0': !toggleRow}" (click)="changeToggleRow()" class="text-black text-xl transform transition-transform duration-300 inline-block cursor-pointer"></fa-icon></td> 
+            
+          <td class="p-5  border-b border-gray-400 ">#34343</td>
+          <td class="p-5  border-b border-gray-400">$654</td>
+          <td class="p-5  border-b border-gray-400">Pending</td>
+          <td class="p-5  border-b border-gray-400">Pending</td>
+          <td class="p-5  border-b border-gray-400"><a>View</a></td>
+        </tr>
+        @if (toggleRow) {
+            <tr class="label-body p-2 bg-slate-200 " >
+                <td class="p-2  border-b border-gray-400 " ></td> 
+                 
+               <td class="p-5  border-b border-gray-400 ">#34343</td>
+               <td class="p-5  border-b border-gray-400">$654</td>
+               <td class="p-5  border-b border-gray-400">Pending</td>
+               <td class="p-5  border-b border-gray-400">Pending</td>
+               <td class="p-5  border-b border-gray-400"></td>
+             </tr> 
+             <tr class="label-body p-2 bg-slate-200" >
+                <td class="p-2  border-b border-gray-400 "></td> 
+                 
+               <td class="p-5  border-b border-gray-400 ">#34343</td>
+               <td class="p-5  border-b border-gray-400">$654</td>
+               <td class="p-5  border-b border-gray-400">Pending</td>
+               <td class="p-5  border-b border-gray-400">Pending</td>
+               <td class="p-5  border-b border-gray-400"></td>
+             </tr>
+        }
+        
+        <tr  >
+            <td class="p-2  border-b border-gray-400 " (click)="changeToggleRow()"><fa-icon [icon]="faAngleRight" class="text-black text-xl "></fa-icon></td> 
+            <td class="p-5  border-b border-gray-400 ">#34343</td>
+            <td class="p-5  border-b border-gray-400">$654</td>
+            <td class="p-5  border-b border-gray-400">Pending</td>
+            <td class="p-5  border-b border-gray-400">Pending</td>
+            <td class="p-5  border-b border-gray-400"><a>View</a></td>
+        </tr>
+        <tr class="" >
+            <td class="p-2   "><fa-icon [icon]="faAngleRight" class="text-black text-xl "></fa-icon></td> 
+            <td class="p-5   ">#34343</td>
+            <td class="p-5 ">$654</td>
+            <td class="p-5  ">Pending</td>
+            <td class="p-5  ">Pending</td>
+            <td class="p-5  "><a>View</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <app-pagination
+  [pageNumber]="currentPage"
+  [totalItem]="totalItems"
+  [itemsPerPage]="itemsPerPage"
+  [showItem]="4"
+  (pageChanged)="onPageChange($event)"
+></app-pagination>
+  </div>
+

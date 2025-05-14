@@ -1,0 +1,17 @@
+<div class="flex justify-between items-center p-5 rounded-lg">
+<select
+(change)="onPageSizeChange($event)"
+[value]="itemsPerPage"
+class="p-2 border border-[#10b981] rounded-md outline-none"
+>
+<option value="5">5</option>
+<option value="10">10</option>
+<option value="20">20</option>
+</select>
+<input
+class="px-4 py-2 focus:border-indigo-500 outline-none border border-[#10b981] rounded-md"
+type="text"
+placeholder="search"
+(change)="getSearchValue($event)"
+/>
+</div>

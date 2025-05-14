@@ -1,0 +1,169 @@
+<div class="rounded-md">
+  <!-- container all chat  -->
+  <div class="flex relative">
+    <!-- first section in chat people name  -->
+    <div
+      class="md:w-[300px] w-[calc(100vw/1.7)] absolute md:relative z-10 bg-stone-200 p-4 md:block h-[calc(100vh-6rem)]"
+      [ngClass]="{ block: chatResponsive, hidden: !chatResponsive }"
+    >
+      <div class="flex justify-between">
+        <h2 class="text-blue-500 text-xl">Sellers</h2>
+        <fa-icon
+          [icon]="faXmark"
+          (click)="toggleChatResponsive()"
+          class="md:hidden text-blue-500 text-xl cursor-pointer"
+        ></fa-icon>
+      </div>
+
+      <div class="flex flex-col"></div>
+
+      <div
+        class="h-[60px] flex justify-start gap-2 items-center text-blue-500 p-2 rounded-md cursor-pointer mt-4"
+      >
+        <div class="relative">
+          <img
+            class="w-[38px] h-[38px] border-white border-2 max-w-[38px] p-[2px] rounded-full"
+            src="admin.jpg"
+            alt=""
+          />
+          <div
+            class="w-[10px] h-[10px] bg-blue-500 rounded-full absolute right-0 bottom-0"
+          ></div>
+        </div>
+
+        <div class="flex justify-center items-start flex-col w-full">
+          <div class="flex justify-between items-center w-full">
+            <h2 class="text-base font-medium">Kazi Ariyan</h2>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="h-[60px] flex justify-start gap-2 items-center text-white p-2 rounded-md cursor-pointer mt-4"
+      >
+        <div class="relative">
+          <img
+            class="w-[38px] h-[38px] border-white border-2 max-w-[38px] p-[2px] rounded-full"
+            src="admin.jpg"
+            alt=""
+          />
+          <div
+            class="w-[10px] h-[10px] bg-blue-500 rounded-full absolute right-0 bottom-0"
+          ></div>
+        </div>
+
+        <div class="flex justify-center items-start flex-col w-full">
+          <div class="flex justify-between items-center w-full">
+            <h2 class="text-base font-medium text-blue-500">Kazi Ariyan</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- second section in chat messages  -->
+    <div
+      class="flex flex-col  md:w-[calc(100%-300px)] p-4 w-full bg-white h-[calc(100vh-6rem)]"
+    >
+      <!-- image and text  -->
+      <div
+        class="flex justify-between items-center border-b-2 p-3 border-stone-200 mb-3"
+      >
+        <div
+          class="h-[60px] flex justify-start gap-2 items-center text-blue-500 p-2 rounded-md cursor-pointer mt-4"
+        >
+          <div class="relative">
+            <img
+              class="w-[45px] h-[45px] border-blue-500 border-2 max-w-[45px] p-[2px] rounded-full"
+              src="admin.jpg"
+              alt=""
+            />
+            <div
+              class="w-[10px] h-[10px] bg-blue-500 rounded-full absolute right-0 bottom-0"
+            ></div>
+          </div>
+
+          <div class="flex justify-center items-start flex-col w-full">
+            <div class="flex justify-between items-center w-full">
+              <h2 class="text-base font-medium">Kazi Ariyan</h2>
+            </div>
+          </div>
+        </div>
+
+        <fa-icon
+          [icon]="faBars"
+          (click)="toggleChatResponsive()"
+          class="md:hidden text-black text-xl cursor-pointer"
+        ></fa-icon>
+      </div>
+  <!-- messages  -->
+      <div class="flex-1 overflow-y-auto" >
+        <div class="w-full flex justify-start items-center">
+          <div
+            class="flex justify-start items-start gap-2 md:px-3 py-2 max-w-full lg:max-w-[85%]"
+          >
+            <div>
+              <img
+                class="w-[38px] h-[38px] border-2 border-white rounded-full max-w-[38px] p-[3px]"
+                src="admin.jpg"
+                alt=""
+              />
+            </div>
+            <div
+              class="flex justify-center items-start flex-col w-full bg-blue-500 shadow-lg shadow-blue-500/50 text-white py-1 px-2 rounded-sm"
+            >
+              <span>How Are you ? </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full flex justify-end items-center">
+          <div
+            class="flex justify-start items-start gap-2 md:px-3 py-2 max-w-full lg:max-w-[85%]"
+          >
+            <div
+              class="flex justify-center items-start flex-col w-full bg-sky-400 shadow-lg shadow-sky-500/50 text-white py-1 px-2 rounded-sm"
+            >
+              <span>How Are you ? </span>
+            </div>
+            <div>
+              <img
+                class="w-[38px] h-[38px] border-2 border-white rounded-full max-w-[38px] p-[3px]"
+                src="admin.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full flex justify-start items-center">
+          <div
+            class="flex justify-start items-start gap-2 md:px-3 py-2 max-w-full lg:max-w-[85%]"
+          >
+            <div>
+              <img
+                class="w-[38px] h-[38px] border-2 border-white rounded-full max-w-[38px] p-[3px]"
+                src="admin.jpg"
+                alt=""
+              />
+            </div>
+            <div
+              class="flex justify-center items-start flex-col w-full bg-blue-500 shadow-lg shadow-blue-500/50 text-white py-1 px-2 rounded-sm"
+            >
+              <span>How Are you ? </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- search  -->
+      <div class="flex p-4 bg-sky-400 justify-center   ">
+        <input class=" w-full  rounded-full " />
+        <button class="w-10 h-10 rounded-full bg-blue-500 p-2 ml-2 flex items-center"> 
+          <fa-icon
+          [icon]="faLocationArrow"
+          class=" text-xl cursor-pointer text-white  transform rotate-45 inline-block "
+          
+        ></fa-icon></button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+
+
+  <div class="">
+    <ul>
+      @for (sidebarMenu of allNav; track $index) {
+        @if (role === sidebarMenu.role) {
+          <li class="pt-4">
+            <fa-icon [icon]="sidebarMenu.icon" class="mr-2"></fa-icon>
+            <a
+              [routerLink]="sidebarMenu.path"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              >{{ sidebarMenu.title }}</a
+            >
+          </li>
+        }
+      
+  
+      }
+    </ul>
+  </div>
+  
+
+

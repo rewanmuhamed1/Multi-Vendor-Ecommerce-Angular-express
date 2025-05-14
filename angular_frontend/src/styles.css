@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: "Lato", serif;
+
+}
+.login-container-1{
+    background  :linear-gradient(180deg, #81c408 10%, rgba(33, 150, 243, 0) 30%);
+    border-radius: 3rem;
+  }
+  
+  .login-container-2{
+  background-color:color-mix(in srgb,#fff calc(100% * 1),transparent);
+  border-radius: 2.5rem;
+  
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
